@@ -6,7 +6,7 @@ import SocialIcon from "./SocialIcon";
 
 const Footer = () => {
   return (
-    <div className="flex lg:flex-col items-center justify-evenly gap-4 lg:gap-8 p-8 mt-8 w-full bg-[#151414] text-gray-500">
+    <div className="flex lg:flex-col items-center justify-evenly gap-4 lg:gap-8 p-8 w-full bg-[#151414] text-gray-500">
       <div className="flex flex-col items-center justify-center w-full gap-2 lg:max-w-lg">
         <div className="flex items-center justify-center gap-4">
           <Image src="/img/logo.png" alt="" width={80} height={80} />
@@ -45,14 +45,14 @@ const Footer = () => {
             name=""
             id=""
             placeholder="Name (Optional)"
-            className="p-2 text-sm transition-all border-2 border-transparent rounded-md outline-none text-primary-fg focus:border-color-2"
+            className="p-2 text-sm transition-all border-2 border-transparent rounded-sm outline-none text-primary-fg focus:border-color-2"
           />
           <textarea
             name=""
             id=""
             rows={3}
             placeholder="Write your message ..."
-            className="w-full p-2 text-sm transition-all border-2 border-transparent rounded-md outline-none resize-none text-primary-fg focus:border-color-2"
+            className="w-full p-2 text-sm transition-all border-2 border-transparent rounded-sm outline-none resize-none text-primary-fg focus:border-color-2"
           ></textarea>
           <SecondaryButton text="Send" />
         </div>

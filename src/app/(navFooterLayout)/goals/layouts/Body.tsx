@@ -1,7 +1,9 @@
-const Body = () => {
-  return (
-    <div>Goals</div>
-  )
-}
+import { navHeight, topMargin } from "@constants/constants";
 
-export default Body
+const Body = () => {
+  let marginT = topMargin(navHeight);
+
+  return <div style={{ marginTop: marginT }}>Goals</div>;
+};
+
+export default Body;

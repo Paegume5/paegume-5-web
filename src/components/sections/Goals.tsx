@@ -1,3 +1,5 @@
+"use client";
+
 import Goal from "@components/Goal";
 import MainCard from "@components/MainCard";
 import PrimaryButton from "@components/PrimaryButton";
@@ -60,7 +62,7 @@ const Goals = () => {
         </div>
         <div className="w-full">
           <center>
-            <PrimaryButton text="Explore" arrow link to="/goals" />
+            <PrimaryButton text="Read more" arrow link to="/goals" />
           </center>
         </div>
       </>

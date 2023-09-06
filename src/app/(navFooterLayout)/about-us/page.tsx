@@ -1,4 +1,3 @@
-import { navHeight, topMargin } from "@constants/constants"
 import Body from "./layouts/Body";
 import { Metadata } from "next";
 
@@ -9,10 +8,8 @@ export const metadata: Metadata = {
 
 const AboutPage = () => {
 
-  let marginT = topMargin(navHeight);
-
   return (
-      <div className={``} style={{marginTop: marginT}}>
+      <div>
         <Body />
       </div>
   )

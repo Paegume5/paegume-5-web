@@ -21,7 +21,7 @@ const Title = ({ text, color }: TitleProps) => {
 
 const MainCard = ({ title, titleInside, children }: MainCardProps) => {
   return (
-    <div className="my-10">
+    <div className="py-4">
       {titleInside || <Title text={title} />}
       <div className="w-[85vw] mx-auto p-8 bg-white shadow-card shadow-gray-500 sm:text-sm sm:w-[90vw]">
         {titleInside && <Title text={title} />}
