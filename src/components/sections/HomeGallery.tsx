@@ -16,7 +16,7 @@ const HomeGallery = () => {
         <Image src="/svg/icons/close.svg" width={32} height={32} alt="" />
       </button>
       <div
-        className="absolute top-0 bottom-0 left-0 right-0 z-20 cursor-zoom-out bg-black/90"
+        className="fixed top-0 bottom-0 left-0 right-0 z-20 cursor-zoom-out bg-black/90"
         onClick={() => setIsImageFull(false)}
       ></div>
       <div className="fixed top-[50%] left-[50%] z-30 transform translate-x-[-50%] translate-y-[-50%]">
