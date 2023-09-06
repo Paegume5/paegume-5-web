@@ -16,7 +16,7 @@ const Shortcuts = () => {
       <ShortcutBtn
         header="Our Goals"
         linkText="Join Us"
-        to="/join-us"
+        to="/register"
         bgColor="bg-color-1"
       >
         We are driven by the mission of providing critically needed humanitarian

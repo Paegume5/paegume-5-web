@@ -23,12 +23,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/img/logo.png" />
       </head>
-      <body className={`${poppins.className} bg-primary-bg`}>
-        <div className="relative">
-          <NavBar />
-          {children}
-        </div>
-      </body>
+      <body className={`${poppins.className} bg-primary-bg`}>{children}</body>
     </html>
   );
 }

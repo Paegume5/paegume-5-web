@@ -42,10 +42,9 @@ const HomeGallery = () => {
       >
         {homeGallery.map((image, index) => {
           return (
-            <div className="relative w-80 aspect-[4_/_3] shadow cursor-zoom-in select-none">
+            <div className="relative w-80 aspect-[4_/_3] shadow cursor-zoom-in select-none" key={index}>
               <Image
                 src={`/img/gallery/${image}`}
-                key={index}
                 onClick={() => {
                   setIsImageFull(true);
                   setCurrentFullImage(`/img/gallery/${image}`);

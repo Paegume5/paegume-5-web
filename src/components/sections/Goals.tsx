@@ -28,7 +28,7 @@ const Goals = () => {
           <Goal
             title="Vision"
             active={activeGoals[0]}
-            handleClick={() => {
+            click={() => {
               toggleAccordion(0);
             }}
           >
@@ -38,7 +38,7 @@ const Goals = () => {
           <Goal
             title="Mission"
             active={activeGoals[1]}
-            handleClick={() => {
+            click={() => {
               toggleAccordion(1);
             }}
           >
@@ -49,7 +49,7 @@ const Goals = () => {
           <Goal
             title="Vaule"
             active={activeGoals[2]}
-            handleClick={() => {
+            click={() => {
               toggleAccordion(2);
             }}
           >

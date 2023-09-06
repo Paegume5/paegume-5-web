@@ -2,19 +2,22 @@ interface SecondaryButtonProps {
   text: string;
   color?: string;
   arrow?: boolean;
-  handleClick?: () => void;
+  click?: () => void;
+  submit?: () => void;
   link?: boolean;
   to? : string
   classes?: string;
 }
 
-const SecondaryButton = ({ text, color, arrow, handleClick, link, to, classes }: SecondaryButtonProps) => {
+const SecondaryButton = ({ text, color, arrow, click, submit, link, to, classes }: SecondaryButtonProps) => {
   const btn = (
     <button
       className={`flex gap-1 items-center justify-center px-5 py-3 text-sm rounded-[4px] ${
         color ?? "bg-color-2"
       } text-secondary-fg hover:opacity-75 ${classes}`}
-      onClick={handleClick}
+      onClick={click}
+      onSubmit={submit}
+      
     >
       {text}
       {arrow && <span>&gt;</span>}
@@ -25,7 +28,7 @@ const SecondaryButton = ({ text, color, arrow, handleClick, link, to, classes }:
     <a
       className={`flex gap-1 items-center justify-center px-5 py-3 text-sm w-fit rounded-[4px] ${
         color ?? "bg-color-2"
-      } text-secondary-fg hover:opacity-75`}
+      } text-secondary-fg hover:opacity-75 ${classes}`}
       href={to ?? ""}
     >
       {text}

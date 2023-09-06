@@ -6,14 +6,14 @@ interface GoalProps {
   title: string;
   children: ReactNode;
   active?: boolean;
-  handleClick?: () => void;
+  click?: () => void;
 }
 
-const Goal = ({ title, children, active, handleClick }: GoalProps) => {
+const Goal = ({ title, children, active, click }: GoalProps) => {
   return (
     <div
       className="flex flex-col items-center justify-start h-full px-4 py-8 md:py-4 shadow-card shadow-gray-400 select-none md:cursor-pointer"
-      onClick={handleClick}
+      onClick={click}
     >
       <div className="text-2xl font-semibold">{title}</div>
       <div

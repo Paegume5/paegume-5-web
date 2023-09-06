@@ -12,7 +12,7 @@ const JoinUs = () => {
           approach, providing critically needed humanitarian support.
         </p>
         <div className="flex gap-1">
-          <SecondaryButton text="Join Us" />
+          <SecondaryButton text="Join Us" link to="/register" />
           <SecondaryButton text="Donate" link to="/donate" />
         </div>
       </div>

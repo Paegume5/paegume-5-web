@@ -2,19 +2,19 @@ interface PrimaryButtonProps {
   text: string;
   color?: string;
   arrow?: boolean;
-  handleClick?: () => void;
+  click?: () => void;
   link?: boolean;
   to? : string
   classes?: string;
 }
 
-const PrimaryButton = ({ text, color, arrow, handleClick, link, to, classes }: PrimaryButtonProps) => {
+const PrimaryButton = ({ text, color, arrow, click, link, to, classes }: PrimaryButtonProps) => {
   const btn = (
     <button
       className={`flex gap-1 items-center justify-center px-5 py-3 text-sm rounded-full ${
         color ?? "bg-color-2"
       } text-secondary-fg hover:opacity-75 ${classes}`}
-      onClick={handleClick}
+      onClick={click}
     >
       {text}
       {arrow && <span>&gt;</span>}

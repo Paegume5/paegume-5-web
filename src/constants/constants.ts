@@ -18,8 +18,8 @@ export const links = [
     to: "/gallery",
   },
   {
-    name: "Donate",
-    to: "/donate",
+    name: "Join us",
+    to: "/register",
   },
   {
     name: "About Us",

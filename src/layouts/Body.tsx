@@ -1,6 +1,5 @@
 "use client";
 
-import Footer from "@components/Footer";
 import Test from "@components/Test";
 import Challenges from "@components/sections/Challenges";
 import HomeGallery from "@components/sections/HomeGallery";
@@ -19,7 +18,6 @@ const Body = () => {
       <Challenges />
       <HowToHelp />
       <Test />
-      <Footer />
     </>
   );
 };

@@ -3,7 +3,7 @@ import PrimaryButton from "@components/PrimaryButton";
 const Header = () => {
   
   const headerStyle = {
-    backgroundImage: `linear-gradient(to top, #000000c6 20%, #000000d9), url('/img/bg.gif')`,
+    backgroundImage: `linear-gradient(to top, #000000c1 20%, #000000c9), url('/img/bg.gif')`,
     backgroundSize: 'cover'
   };
 
