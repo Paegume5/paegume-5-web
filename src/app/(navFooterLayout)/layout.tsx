@@ -1,3 +1,6 @@
+import Footer from "@components/Footer";
+import NavBar from "@components/NavBar";
+
 export default function defaultLayout({
   children,
 }: {
@@ -5,7 +8,9 @@ export default function defaultLayout({
 }) {
   return (
     <div>
+      <NavBar />
       {children}
+      <Footer />
     </div>
   );
 }
