@@ -1,9 +1,10 @@
 import Goals from "@components/sections/Goals";
-import { navHeight, topMargin } from "@constants/constants";
+import { navHeight } from "@constants/constants";
+import { makeTopMargin } from "@utils/utils";
 import Image from "next/image";
 
 const Body = () => {
-  let marginT = topMargin(navHeight);
+  let marginT = makeTopMargin(navHeight);
 
   return (
     <div style={{ marginTop: marginT }}>

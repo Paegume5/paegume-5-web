@@ -26,7 +26,7 @@ const Footer = () => {
           <SocialIcon
             link="https://youtube.com/"
             logoSrc="/svg/icons/youtube.svg"
-            bgColor="bg-white"
+            bgColor="bg-gray-200"
           />
           <SocialIcon
             link="https://t.me/"
@@ -39,20 +39,20 @@ const Footer = () => {
         <h1 className="mb-2 text-2xl font-medium text-white">
           Send us a message
         </h1>
-        <div className="flex flex-col gap-2 px-16 sm:px-12 w-full">
+        <div className="flex flex-col w-full gap-2 px-8 lg:px-12 sm:px-12">
           <input
             type="text"
             name=""
             id=""
             placeholder="Name (Optional)"
-            className="p-2 text-sm transition-all border-2 border-transparent rounded-sm outline-none text-primary-fg focus:border-color-2"
+            className="p-2 text-sm transition-all bg-gray-600 border-2 border-transparent rounded-md outline-none text-secondary-fg focus:border-color-2"
           />
           <textarea
             name=""
             id=""
             rows={3}
             placeholder="Write your message ..."
-            className="w-full p-2 text-sm transition-all border-2 border-transparent rounded-sm outline-none resize-none text-primary-fg focus:border-color-2"
+            className="w-full p-2 text-sm transition-all bg-gray-600 border-2 border-transparent rounded-md outline-none resize-none text-secondary-fg focus:border-color-2"
           ></textarea>
           <SecondaryButton text="Send" />
         </div>

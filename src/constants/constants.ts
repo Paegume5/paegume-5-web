@@ -35,12 +35,6 @@ export const homeGallery = [
 
 export const navHeight = 76;
 
-export function topMargin(height: number, add?: number) {
-  let margin = height + (add ?? 0);
-
-  return `${margin}px`;
-}
-
 export const galleryImages = [
   "/img/gallery/g1.jpg",
   "/img/gallery/g2.jpg",

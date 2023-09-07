@@ -1,9 +1,11 @@
+import PrimaryButton from "@components/PrimaryButton";
 import SecondaryButton from "@components/SecondaryButton";
-import { navHeight, topMargin } from "@constants/constants";
+import { navHeight } from "@constants/constants";
+import { makeTopMargin } from "@utils/utils";
 import Image from "next/image";
 
 const Body = () => {
-  let marginT = topMargin(navHeight);
+  let marginT = makeTopMargin(navHeight);
   let contStyle = {
     marginTop: 0,
     backgroundImage: `linear-gradient(to top, #00000021 20%, #00000066), url('/img/header_bg.jpg')`,
@@ -17,12 +19,9 @@ const Body = () => {
       className="flex items-center justify-center w-screen h-screen bg-center bg-cover"
       style={contStyle}
     >
-      <a
-        href="/"
-        className="fixed text-color-2 text-sm underline top-6 left-6 z-20"
-      >
-        Back to homepage
-      </a>
+      <div className="fixed text-color-2 text-sm top-6 left-6 z-20">
+        <PrimaryButton text="Back to homepage" link to="/" classes="text-xs" />
+      </div>
       <div className="flex flex-col items-center gap-12">
         <h1 className="text-3xl text-white">Become a Member Now</h1>
         <form
@@ -65,6 +64,13 @@ const Body = () => {
             placeholder="Email Address"
             className={`${inputStyles}`}
             required
+          />
+          <textarea
+            name=""
+            id=""
+            rows={3}
+            placeholder="Write a comment (optional)"
+            className={`${inputStyles} resize-none`}
           />
           <div className="self-center w-fit">
             <SecondaryButton text="Register" />

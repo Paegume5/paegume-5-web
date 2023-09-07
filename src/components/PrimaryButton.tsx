@@ -1,6 +1,6 @@
 interface PrimaryButtonProps {
   text: string;
-  color?: string;
+  bgColor?: string;
   arrow?: boolean;
   click?: () => void;
   link?: boolean;
@@ -8,11 +8,11 @@ interface PrimaryButtonProps {
   classes?: string;
 }
 
-const PrimaryButton = ({ text, color, arrow, click, link, to, classes }: PrimaryButtonProps) => {
+const PrimaryButton = ({ text, bgColor, arrow, click, link, to, classes }: PrimaryButtonProps) => {
   const btn = (
     <button
-      className={`flex gap-1 items-center justify-center px-5 py-3 text-sm rounded-full ${
-        color ?? "bg-color-2"
+      className={`flex gap-1 items-center justify-center px-5 py-3 rounded-full ${
+        bgColor ?? "bg-color-2"
       } text-secondary-fg hover:opacity-75 ${classes}`}
       onClick={click}
     >
@@ -23,9 +23,9 @@ const PrimaryButton = ({ text, color, arrow, click, link, to, classes }: Primary
 
   const linkBtn = (
     <a
-      className={`flex gap-1 items-center justify-center px-5 py-3 text-sm w-fit rounded-full ${
-        color ?? "bg-color-2"
-      } text-secondary-fg hover:opacity-75`}
+      className={`flex gap-1 items-center justify-center px-5 py-3 w-fit rounded-full ${
+        bgColor ?? "bg-color-2"
+      } text-secondary-fg hover:opacity-75 ${classes}`}
       href={to ?? ""}
     >
       {text}

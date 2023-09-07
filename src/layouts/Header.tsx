@@ -29,7 +29,7 @@ const Header = () => {
             saving lives and mitigating human suffering, based on comprehensive
             engagement in relief, recovery, rehabilitation and resilience.
           </p>
-          <PrimaryButton text="Help Us" color="bg-color-3" />
+          <PrimaryButton text="Help Us" bgColor="bg-color-3" classes="text-sm" />
         </div>
       </div>
     </div>

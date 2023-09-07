@@ -1,9 +1,10 @@
 import SecondaryButton from "@components/SecondaryButton";
-import { navHeight, topMargin } from "@constants/constants";
+import { navHeight } from "@constants/constants";
+import { makeTopMargin } from "@utils/utils";
 import Image from "next/image";
 
 const Body = () => {
-  let marginT = topMargin(navHeight);
+  let marginT = makeTopMargin(navHeight);
   let contStyle = { marginTop: 0 };
 
   const inputStyles =
