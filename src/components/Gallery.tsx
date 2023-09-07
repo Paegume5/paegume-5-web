@@ -9,9 +9,6 @@ import "yet-another-react-lightbox/styles.css";
 const Gallery = () => {
   const [open, setOpen] = useState(false);
   const [imageIndex, setImageIndex] = useState(0);
-  const [isImageLoaded, setIsImageLoaded] = useState(
-    galleryImages.map(() => false)
-  );
 
   return (
     <div className="w-full">
@@ -30,19 +27,9 @@ const Gallery = () => {
                 src={image}
                 alt="Gallery Image"
                 fill
-                onLoad={() => {
-                  let arr = [...isImageLoaded];
-                  arr[index] = true;
-                  setIsImageLoaded(arr);
-                  console.log(image, "loaded")
-                }}
               />
               <div className="absolute w-full h-full bg-black/0 transition-all duration-300 group-hover:bg-black/70"></div>
-              {isImageLoaded[index] || (
-                <div className="absolute flex items-center justify-center w-full h-full text-white bg-black/60">
-                  <div className="animate-pulse">Loading ...</div>
-                </div>
-              )}
+              
             </div>
           );
         })}

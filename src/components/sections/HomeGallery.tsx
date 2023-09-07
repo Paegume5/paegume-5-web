@@ -7,9 +7,6 @@ import { toggleBodyScroll } from "@utils/utils";
 const HomeGallery = () => {
   const [isImageFull, setIsImageFull] = useState(false);
   const [currentFullImage, setCurrentFullImage] = useState("");
-  const [isImageLoaded, setIsImageLoaded] = useState(
-    homeGallery.map(() => false)
-  );
 
   const FullScreenImage = (
     <>
@@ -65,18 +62,7 @@ const HomeGallery = () => {
                 src={`/img/gallery/${image}`}
                 alt="Gallery Image"
                 fill
-                onLoad={() => {
-                  let arr = [...isImageLoaded];
-                  arr[index] = true;
-                  setIsImageLoaded(arr);
-                  console.log(image, "loaded")
-                }}
               />
-              {isImageLoaded[index] || (
-                <div className="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center text-white bg-black/60">
-                  <div className="animate-pulse">Loading ...</div>
-                </div>
-              )}
             </div>
           );
         })}
