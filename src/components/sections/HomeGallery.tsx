@@ -69,9 +69,10 @@ const HomeGallery = () => {
                   let arr = [...isImageLoaded];
                   arr[index] = true;
                   setIsImageLoaded(arr);
+                  console.log(image, "loaded")
                 }}
               />
-              {isImageLoaded || (
+              {isImageLoaded[index] || (
                 <div className="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center text-white bg-black/60">
                   <div className="animate-pulse">Loading ...</div>
                 </div>

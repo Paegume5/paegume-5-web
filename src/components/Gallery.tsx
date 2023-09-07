@@ -34,10 +34,11 @@ const Gallery = () => {
                   let arr = [...isImageLoaded];
                   arr[index] = true;
                   setIsImageLoaded(arr);
+                  console.log(image, "loaded")
                 }}
               />
               <div className="absolute w-full h-full bg-black/0 transition-all duration-300 group-hover:bg-black/70"></div>
-              {isImageLoaded || (
+              {isImageLoaded[index] || (
                 <div className="absolute flex items-center justify-center w-full h-full text-white bg-black/60">
                   <div className="animate-pulse">Loading ...</div>
                 </div>
