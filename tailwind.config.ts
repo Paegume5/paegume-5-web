@@ -14,6 +14,7 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-default": "linear-gradient(to top, #000000aa 20%, #000000c9)",
       },
       colors: {
         "primary-bg": "#f8f8f8",
