@@ -1,4 +1,4 @@
-import { homeGallery } from "@constants/constants";
+import { homeGalleryImages } from "@constants/constants";
 import Image from "next/image";
 import "@styles/homeGallery.css";
 import { useState } from "react";
@@ -11,7 +11,7 @@ const HomeGallery = () => {
   const FullScreenImage = (
     <>
       <button
-        className="hidden sm:block fixed z-30 text-2xl border-2 rounded-full top-4 right-4"
+        className="hidden sm:block fixed z-30 border-[3px] rounded-full p-0.5 top-4 right-4"
         onClick={() => {
           setIsImageFull(false);
           toggleBodyScroll("show")
@@ -47,19 +47,19 @@ const HomeGallery = () => {
         id="scrollbar"
         className="grid items-center grid-flow-col grid-rows-1 gap-6 p-2 pb-4 overflow-x-scroll overflow-y-hidden scroll-smooth"
       >
-        {homeGallery.map((image, index) => {
+        {homeGalleryImages.map((image, index) => {
           return (
             <div
               className="relative w-80 aspect-[4_/_3] shadow cursor-zoom-in select-none hover:transform hover:scale-105 transition-all duration-300"
               key={index}
               onClick={() => {
                 setIsImageFull(true);
-                setCurrentFullImage(`/img/gallery/${image}`);
+                setCurrentFullImage(`${image}`);
                 toggleBodyScroll("hide")
               }}
             >
               <Image
-                src={`/img/gallery/${image}`}
+                src={`${image}`}
                 alt="Gallery Image"
                 fill
               />

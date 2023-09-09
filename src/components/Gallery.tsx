@@ -1,5 +1,5 @@
 "use client";
-import { galleryImages, slides } from "@constants/constants";
+import { galleryImages, lightboxSlides } from "@constants/constants";
 import Image from "next/image";
 import React, { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
@@ -39,7 +39,7 @@ const Gallery = () => {
         index={imageIndex}
         close={() => setOpen(false)}
         plugins={[Zoom]}
-        slides={slides}
+        slides={lightboxSlides}
       />
     </div>
   );

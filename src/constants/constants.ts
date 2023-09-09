@@ -1,5 +1,3 @@
-import { Metadata } from "next";
-
 export const links = [
   {
     name: "Home",
@@ -23,17 +21,24 @@ export const links = [
   },
 ];
 
-export const homeGallery = [
-  "g1.jpg",
-  "g2.jpg",
-  "g3.jpg",
-  "g4.jpg",
-  "g5.jpg",
-  "g6.jpg",
-  "g7.jpg",
-];
-
 export const navHeight = 76;
+
+export const headerImages = [
+  "/img/gallery/g1.jpg",
+  "/img/gallery/g2.jpg",
+  "/img/gallery/g3.jpg",
+  "/img/gallery/g4.jpg",
+  "/img/gallery/g5.jpg",
+  "/img/gallery/g7.jpg",
+]
+
+export const homeGalleryImages = [
+  "/img/gallery/g1.jpg",
+  "/img/gallery/g2.jpg",
+  "/img/gallery/g3.jpg",
+  "/img/gallery/g4.jpg",
+  "/img/gallery/g5.jpg",
+];
 
 export const galleryImages = [
   "/img/gallery/g1.jpg",
@@ -45,7 +50,7 @@ export const galleryImages = [
   "/img/gallery/g7.jpg",
 ];
 
-export const slides = galleryImages.map((item) => ({
+export const lightboxSlides = galleryImages.map((item) => ({
   src: item,
   width: 3840,
   height: 2560,
