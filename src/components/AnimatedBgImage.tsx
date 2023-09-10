@@ -33,7 +33,6 @@ const AnimatedBgImage = ({
           alt=""
           fill
           key={index}
-          objectFit="cover"
           style={{
             opacity: index == currentImageIndex ? "1" : "0",
             // zIndex: index == currentImageIndex ? "1" : "0",
@@ -43,7 +42,7 @@ const AnimatedBgImage = ({
                 ? `zoomOut ${slideInterval + 900}ms`
                 : "",
           }}
-          className={`transition-all duration-[0.8s] ease-in-out`}
+          className={`transition-all duration-[0.8s] ease-in-out object-cover`}
         />
       ))}
     </div>
