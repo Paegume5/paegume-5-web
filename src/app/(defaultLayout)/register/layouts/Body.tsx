@@ -1,46 +1,47 @@
 "use client";
 
+import NotificationModal from "@components/NotificationModal";
 import PrimaryButton from "@components/PrimaryButton";
 import SecondaryButton from "@components/SecondaryButton";
-import { navHeight } from "@constants/constants";
-import { makeTopMargin } from "@utils/utils";
-import { redirect } from "next/navigation";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { useState } from "react";
 
 const Body = () => {
-  let marginT = makeTopMargin(navHeight);
   let contStyle = {
     marginTop: 0,
     backgroundImage: `linear-gradient(to top, #00000021 20%, #00000066), url('/img/header_bg.jpg')`,
   };
 
   const [submitting, setSubmitting] = useState(false);
+  const [registerSuccess, setregisterSuccess] = useState(false);
+  const [notify, setNotify] = useState(false);
 
   const inputStyles =
     "p-3 rounded text-sm outline-none border-2 focus:border-color-2 transition-all focus:invalid:border-color-6";
 
-  async function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleFormSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
 
-    let formLink = `https://docs.google.com/forms/d/e/1FAIpQLSeF-I4qcoKcgo6NAib3mJOd3nlGCEws8HrrwmjsGe85sJ2iNQ/formResponse`;
+    let formLink = `https://formkeep.com/f/463b8fcf887d`;
+    // let formLink = `https://getform.io/f/c573bbb7-6552-4576-b953-daed296a5bd7`;
 
-    try {
-      setSubmitting(true);
-      await fetch(formLink, {
-        method: "POST",
-        mode: "no-cors",
-        body: new FormData(form),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      setSubmitting(false);
-    } catch (error) {
-      alert("Error Occured! Please try again");
-    } finally {
-      setSubmitting(false);
-    }
+    setSubmitting(true);
+    setregisterSuccess(false);
+    setNotify(false);
+    await fetch(formLink, {
+      method: "POST",
+      body: new FormData(form),
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        setregisterSuccess(response.ok);
+      })
+      .catch(() => setregisterSuccess(false));
+    setSubmitting(false);
+    setNotify(true);
+    registerSuccess && form.reset();
   }
 
   return (
@@ -48,6 +49,16 @@ const Body = () => {
       className="flex items-center justify-center w-screen h-screen bg-center bg-cover"
       style={contStyle}
     >
+      <NotificationModal
+        open={notify}
+        setOpen={setNotify}
+        type={registerSuccess ? "success" : "error"}
+        title={registerSuccess ? "Success" : "Error"}
+      >
+        {registerSuccess
+          ? "Registration Successful! You will hear back from us soon."
+          : "Registration failed! Please try again later."}
+      </NotificationModal>
       <div className="fixed text-color-2 text-sm top-6 left-6 z-20">
         <PrimaryButton text="Back to homepage" link to="/" classes="text-xs" />
       </div>
@@ -61,7 +72,7 @@ const Body = () => {
           <div className="flex justify-between gap-2">
             <input
               type="text"
-              name="entry.1893331825"
+              name="First Name"
               id=""
               minLength={2}
               placeholder="First Name"
@@ -70,7 +81,7 @@ const Body = () => {
             />
             <input
               type="text"
-              name="entry.199522739"
+              name="Last Name"
               id=""
               minLength={2}
               placeholder="Last Name"
@@ -80,7 +91,7 @@ const Body = () => {
           </div>
           <input
             type="text"
-            name="entry.1008523104"
+            name="Phone Number"
             id="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$"
             pattern="^([+]\d{2})?\d{10}$"
             placeholder="Phone Number"
@@ -89,7 +100,7 @@ const Body = () => {
           />
           <input
             type="email"
-            name="entry.1715723432"
+            name="Email"
             id=""
             pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+"
             placeholder="Email Address"
@@ -97,7 +108,7 @@ const Body = () => {
             required
           />
           <textarea
-            name="entry.2103334928"
+            name="Comment"
             id=""
             rows={3}
             placeholder="Write a comment (optional)"

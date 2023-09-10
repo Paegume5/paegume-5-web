@@ -23,7 +23,13 @@ const Pagd = () => {
             supplementary food, water, medicament and clothes for the most
             vulnerable homeless and urban poor communities
           </p>
-          <PrimaryButton text="Learn More" arrow link to="/about-us" />
+          <PrimaryButton
+            text="Read More"
+            arrow
+            link
+            to="/about-us"
+            classes="text-sm"
+          />
         </div>
       </div>
     </MainCard>

@@ -1,14 +1,17 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import '@styles/animatedBgImage.css'
+import "@styles/animatedBgImage.css";
 
 interface AnimatedBgImageProps {
   images: Array<string>;
+  slideInterval?: number;
 }
 
-const AnimatedBgImage = ({ images }: AnimatedBgImageProps) => {
+const AnimatedBgImage = ({
+  images,
+  slideInterval = 4000,
+}: AnimatedBgImageProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const slideInterval = 5000;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -36,7 +39,9 @@ const AnimatedBgImage = ({ images }: AnimatedBgImageProps) => {
             // zIndex: index == currentImageIndex ? "1" : "0",
             visibility: index == currentImageIndex ? "visible" : "hidden",
             animation:
-              index == currentImageIndex ? `zoomOut ${slideInterval-100}ms` : "",
+              index == currentImageIndex
+                ? `zoomOut ${slideInterval + 900}ms`
+                : "",
           }}
           className={`transition-all duration-[0.8s] ease-in-out`}
         />

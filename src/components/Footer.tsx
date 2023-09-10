@@ -1,10 +1,31 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import SecondaryButton from "./SecondaryButton";
 import SocialIcon from "./SocialIcon";
+import { useState } from "react";
 
 const Footer = () => {
+  const [sending, setSending] = useState(false);
+
+  async function handleMessageSend(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+
+    let formLink = `https://formkeep.com/f/f3b2e9041f27`;
+
+    setSending(true);
+    await fetch(formLink, {
+      method: "POST",
+      body: new FormData(form),
+      headers: {
+        Accept: "application/json",
+      },
+    });
+    setSending(false);
+    form.reset();
+  }
+
   return (
     <div className="flex lg:flex-col items-center justify-evenly gap-4 lg:gap-8 p-8 w-full bg-[#151414] text-gray-500">
       <div className="flex flex-col items-center justify-center w-full gap-2 lg:max-w-lg">
@@ -35,31 +56,40 @@ const Footer = () => {
           />
         </div>
       </div>
-      <form className="flex flex-col items-center justify-center w-full h-full lg:max-w-lg">
+      <form
+        className="flex flex-col items-center justify-center w-full h-full lg:max-w-lg"
+        onSubmit={handleMessageSend}
+      >
         <h1 className="mb-2 text-2xl font-medium text-white">
           Send us a message
         </h1>
         <div className="flex flex-col w-full gap-2 px-8 lg:px-12 sm:px-12">
           <input
             type="text"
-            name=""
+            name="Name"
             id=""
             placeholder="Name (Optional)"
             className="p-2 text-sm transition-all bg-gray-600 border-2 border-transparent rounded-md outline-none text-secondary-fg focus:border-color-2"
           />
           <textarea
-            name=""
+            name="Message"
             id=""
             rows={3}
             placeholder="Write your message ..."
             className="w-full p-2 text-sm transition-all bg-gray-600 border-2 border-transparent rounded-md outline-none resize-none text-secondary-fg focus:border-color-2"
           ></textarea>
-          <SecondaryButton text="Send" />
+          <SecondaryButton
+            text={sending ? "Sending ..." : "Send"}
+            disabled={sending}
+            submit
+          />
         </div>
       </form>
       <div className="flex items-center justify-center w-full gap-4 lg:max-w-lg">
         <div className="flex flex-col gap-4">
-          <h1 className="text-2xl font-medium text-white lg:self-center">Contact Us</h1>
+          <h1 className="text-2xl font-medium text-white lg:self-center">
+            Contact Us
+          </h1>
           <div className="flex items-center gap-4">
             <Image src="/svg/icons/phone.svg" width={32} height={32} alt="" />
             <div className="flex flex-col">

@@ -29,8 +29,7 @@ export const headerImages = [
   "/img/gallery/g3.jpg",
   "/img/gallery/g4.jpg",
   "/img/gallery/g5.jpg",
-  "/img/gallery/g7.jpg",
-]
+];
 
 export const homeGalleryImages = [
   "/img/gallery/g1.jpg",
