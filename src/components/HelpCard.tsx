@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { ReactNode } from "react";
 
 interface HelpProps {
   header: string;
   iconSrc: string;
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 const Help = ({ header, children, iconSrc }: HelpProps) => {

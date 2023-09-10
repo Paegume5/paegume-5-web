@@ -1,6 +1,6 @@
 import ShortcutBtn from "@components/ShortcutBtn";
 
-const Shortcuts = ({noLinks}: {noLinks?: boolean}) => {
+const Shortcuts = ({ noLinks }: { noLinks?: boolean }) => {
   return (
     <div className="grid grid-cols-3 sm:grid-cols-1">
       <ShortcutBtn

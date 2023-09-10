@@ -1,10 +1,8 @@
 "use client";
 
-import { ReactNode } from "react";
-
 interface GoalProps {
   title: string;
-  children: ReactNode;
+  children: React.ReactNode;
   active?: boolean;
   click?: () => void;
 }
@@ -20,9 +18,6 @@ const Goal = ({ title, children, active, click }: GoalProps) => {
         className={`overflow-hidden transition-all ${
           active ? "md:max-h-64 duration-700" : "md:max-h-0 duration-300"
         }`}
-        // style={{
-        //   transition: 'max-height 0.2s ease-out'
-        // }}
       >
         <div className={`w-full h-2 rounded-full bg-color-2`}></div>
         <div className={`text-center mt-4`}>{children}</div>

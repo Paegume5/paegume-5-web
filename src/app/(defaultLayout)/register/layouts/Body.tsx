@@ -56,7 +56,7 @@ const Body = () => {
         title={registerSuccess ? "Success" : "Error"}
       >
         {registerSuccess
-          ? "Registration Successful! You will hear back from us soon."
+          ? "Thank you for registering! You will hear back from us soon."
           : "Registration failed! Please try again later."}
       </NotificationModal>
       <div className="fixed text-color-2 text-sm top-6 left-6 z-20">

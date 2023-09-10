@@ -12,10 +12,6 @@ export const links = [
     to: "/gallery",
   },
   {
-    name: "Donate",
-    to: "/donate",
-  },
-  {
     name: "Join us",
     to: "/register",
   },
@@ -28,8 +24,8 @@ export const links = [
 export const navHeight = 76;
 
 export const headerImages = [
-  "/img/gallery/g1.jpg",
   "/img/gallery/g2.jpg",
+  "/img/gallery/g1.jpg",
   "/img/gallery/g3.jpg",
   "/img/gallery/g4.jpg",
   "/img/gallery/g5.jpg",

@@ -1,3 +1,5 @@
+import { FiArrowRight } from "react-icons/fi";
+
 interface PrimaryButtonProps {
   text: string;
   bgColor?: string;
@@ -10,34 +12,38 @@ interface PrimaryButtonProps {
 
 const PrimaryButton = ({
   text,
-  bgColor,
+  bgColor = "bg-color-2",
   arrow,
   click,
   link,
-  to,
+  to = "",
   classes,
 }: PrimaryButtonProps) => {
   const btn = (
     <button
-      className={`flex gap-1 items-center justify-center px-5 py-3 rounded-full outline-none ${
-        bgColor ?? "bg-color-2"
-      } text-secondary-fg hover:opacity-75 ${classes}`}
+      className={`flex gap-1 items-center justify-center px-5 py-3 rounded-full outline-none ${bgColor} text-secondary-fg hover:opacity-75 ${classes}`}
       onClick={click}
     >
       {text}
-      {arrow && <span>&gt;</span>}
+      {arrow && (
+        <span>
+          <FiArrowRight />
+        </span>
+      )}
     </button>
   );
 
   const linkBtn = (
     <a
-      className={`flex gap-1 items-center justify-center px-5 py-3 w-fit rounded-full outline-none ${
-        bgColor ?? "bg-color-2"
-      } text-secondary-fg hover:opacity-75 ${classes}`}
-      href={to ?? ""}
+      className={`flex gap-1 items-center justify-center px-5 py-3 w-fit rounded-full outline-none ${bgColor} text-secondary-fg hover:opacity-75 ${classes}`}
+      href={to}
     >
       {text}
-      {arrow && <span>&gt;</span>}
+      {arrow && (
+        <span>
+          <FiArrowRight />
+        </span>
+      )}
     </a>
   );
 

@@ -4,6 +4,7 @@ import Image from "next/image";
 import SecondaryButton from "./SecondaryButton";
 import SocialIcon from "./SocialIcon";
 import { useState } from "react";
+import { FaFacebookF, FaYoutube, FaTelegramPlane } from "react-icons/fa";
 
 const Footer = () => {
   const [sending, setSending] = useState(false);
@@ -39,21 +40,21 @@ const Footer = () => {
           </p>
         </div>
         <div className="flex gap-2">
-          <SocialIcon
-            link="https://facebook.com/"
-            logoSrc="/svg/icons/facebook.svg"
-            bgColor="bg-facebook"
-          />
-          <SocialIcon
-            link="https://youtube.com/"
-            logoSrc="/svg/icons/youtube.svg"
-            bgColor="bg-gray-200"
-          />
-          <SocialIcon
-            link="https://t.me/"
-            logoSrc="/svg/icons/telegram.svg"
-            bgColor="bg-telegram"
-          />
+          <SocialIcon link="https://facebook.com/" bgColor="bg-facebook">
+            <div className="text-white">
+              <FaFacebookF />
+            </div>
+          </SocialIcon>
+          <SocialIcon link="https://youtube.com/" bgColor="bg-gray-200">
+            <div className="text-youtube">
+              <FaYoutube />
+            </div>
+          </SocialIcon>
+          <SocialIcon link="https://t.me/" bgColor="bg-telegram">
+            <div className="text-white">
+              <FaTelegramPlane />
+            </div>
+          </SocialIcon>
         </div>
       </div>
       <form

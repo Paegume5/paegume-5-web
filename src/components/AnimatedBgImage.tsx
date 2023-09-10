@@ -26,7 +26,7 @@ const AnimatedBgImage = ({
   }, [currentImageIndex]);
 
   return (
-    <div className="relative w-full h-full overflow-hidden">
+    <div className="relative w-full h-full overflow-hidden select-none">
       {images.map((image, index) => (
         <Image
           src={image}
@@ -38,9 +38,7 @@ const AnimatedBgImage = ({
             // zIndex: index == currentImageIndex ? "1" : "0",
             visibility: index == currentImageIndex ? "visible" : "hidden",
             animation:
-              index == currentImageIndex
-                ? `zoomOut ${slideInterval + 900}ms`
-                : "",
+              index == currentImageIndex ? `zoomOut ${slideInterval}ms` : "",
           }}
           className={`transition-all duration-[0.8s] ease-in-out object-cover`}
         />

@@ -3,6 +3,7 @@ import Image from "next/image";
 import "@styles/homeGallery.css";
 import { useState } from "react";
 import { toggleBodyScroll } from "@utils/utils";
+import { AiOutlineClose } from "react-icons/ai";
 
 const HomeGallery = () => {
   const [isImageFull, setIsImageFull] = useState(false);
@@ -11,19 +12,19 @@ const HomeGallery = () => {
   const FullScreenImage = (
     <>
       <button
-        className="hidden sm:block fixed z-30 border-[3px] rounded-full p-0.5 top-4 right-4"
+        className="hidden sm:block fixed z-30 border-[3px] text-2xl text-white rounded-full p-1 top-4 right-4"
         onClick={() => {
           setIsImageFull(false);
-          toggleBodyScroll("show")
+          toggleBodyScroll("show");
         }}
       >
-        <Image src="/svg/icons/close.svg" width={32} height={32} alt="" />
+        <AiOutlineClose />
       </button>
       <div
         className="fixed top-0 bottom-0 left-0 right-0 z-20 cursor-zoom-out bg-black/90"
         onClick={() => {
           setIsImageFull(false);
-          toggleBodyScroll("show")
+          toggleBodyScroll("show");
         }}
       ></div>
       <div className="fixed top-[50%] left-[50%] z-30 transform translate-x-[-50%] translate-y-[-50%]">
@@ -55,14 +56,10 @@ const HomeGallery = () => {
               onClick={() => {
                 setIsImageFull(true);
                 setCurrentFullImage(`${image}`);
-                toggleBodyScroll("hide")
+                toggleBodyScroll("hide");
               }}
             >
-              <Image
-                src={`${image}`}
-                alt="Gallery Image"
-                fill
-              />
+              <Image src={`${image}`} alt="Gallery Image" fill />
             </div>
           );
         })}

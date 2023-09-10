@@ -1,9 +1,7 @@
-import { ReactNode } from "react";
-
 interface MainCardProps {
   title: string;
   titleInside?: boolean;
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 interface TitleProps {
@@ -11,9 +9,11 @@ interface TitleProps {
   color?: string;
 }
 
-const Title = ({ text, color }: TitleProps) => {
+const Title = ({ text, color = "text-black" }: TitleProps) => {
   return (
-    <div className={`mb-2 text-6xl font-black text-center text-${color ?? 'blackp-fg'} lg:text-4xl`}>
+    <div
+      className={`mb-2 text-6xl font-black text-center ${color} lg:text-4xl`}
+    >
       {text}
     </div>
   );

@@ -23,13 +23,8 @@ const Gallery = () => {
                 setImageIndex(index);
               }}
             >
-              <Image
-                src={image}
-                alt="Gallery Image"
-                fill
-              />
+              <Image src={image} alt="Gallery Image" fill />
               <div className="absolute w-full h-full bg-black/0 transition-all duration-300 group-hover:bg-black/70"></div>
-              
             </div>
           );
         })}

@@ -28,7 +28,7 @@ const Pagd = () => {
             arrow
             link
             to="/about-us"
-            classes="text-sm"
+            classes="text-sm sm:text-xs"
           />
         </div>
       </div>

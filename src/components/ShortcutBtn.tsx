@@ -1,15 +1,20 @@
-import { ReactNode } from "react";
-
 interface BtnProps {
   header: string;
   linkText: string;
   to: string;
   bgColor: string;
-  children: ReactNode;
+  children: React.ReactNode;
   noLink?: boolean;
 }
 
-const ShortcutBtn = ({ header, bgColor, linkText, to, children, noLink }: BtnProps) => {
+const ShortcutBtn = ({
+  header,
+  bgColor,
+  linkText,
+  to,
+  children,
+  noLink,
+}: BtnProps) => {
   const linkBtn = (
     <a
       className={`px-6 py-2 border-2 border-gray-200 rounded-sm text-md lg:text-sm lg:px-4 hover:bg-color-5/40`}

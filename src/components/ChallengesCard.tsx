@@ -1,24 +1,21 @@
 import Image from "next/image";
-import { ReactNode } from "react";
 
 interface ChallengesCardProps {
   header: string;
   imgSrc: string;
   bgColor?: string;
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 const ChallengesCard = ({
   header,
   imgSrc,
-  bgColor,
+  bgColor = "bg-color-4",
   children,
 }: ChallengesCardProps) => {
   return (
     <div
-      className={`flex flex-col items-center justify-center py-6 gap-4 rounded-lg ${
-        bgColor ?? "bg-color-4"
-      }`}
+      className={`flex flex-col items-center justify-center py-6 gap-4 rounded-lg ${bgColor}`}
     >
       <div className="flex flex-col items-center">
         <div className="relative w-16 h-16 md:w-12 md:h-12">

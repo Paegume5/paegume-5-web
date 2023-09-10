@@ -1,21 +1,22 @@
 "use client";
 
-import { useRouter } from "next/router";
-import { usePathname } from 'next/navigation'
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Montserrat } from "next/font/google";
 
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useEffect } from "react";
 
 import { links } from "@constants/constants";
 import Link from "next/link";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 const logo_font = Montserrat({
   subsets: ["latin"],
 });
 
 const NavBar = () => {
-  const pathName = usePathname()
+  const icon = <AiOutlineClose />
+  const pathName = usePathname();
 
   const afterStyles =
     "after:w-0 after:h-0.5 after:bg-red-500 after:transition-all \
@@ -29,7 +30,7 @@ const NavBar = () => {
 
   useEffect(() => {
     const toggleFixedNav = () => {
-      if ((window.scrollY === 0) && (pathName == "/")) {
+      if (window.scrollY === 0 && pathName == "/") {
         setIsNavTop(true);
       } else {
         setIsNavTop(false);
@@ -66,9 +67,7 @@ const NavBar = () => {
           PAGD
         </span>
       </Link>
-      <div
-        className="flex items-center gap-10 mr-16 justify-evenly lg:hidden"
-      >
+      <div className="flex items-center gap-10 mr-16 justify-evenly lg:hidden">
         {links.map((link) => {
           return (
             <a
@@ -85,14 +84,14 @@ const NavBar = () => {
         className={`${
           mobileNavShown ? "visible bg-black/80" : "invisible bg-black/0"
         } fixed top-0 right-0 h-screen left-0 z-0 transition-all delay-100`}
-        onClick={() => setMobileNavShown(!mobileNavShown)}
+        onClick={() => setMobileNavShown((prev) => !prev)}
       ></div>
       <div className="relative z-20 hidden lg:block">
         <button
-          className="hidden text-2xl font-bold text-secondary-fg lg:block"
-          onClick={() => setMobileNavShown(!mobileNavShown)}
+          className="hidden text-2xl text-secondary-fg lg:block"
+          onClick={() => setMobileNavShown((prev) => !prev)}
         >
-          {mobileNavShown ? <span>&#9932;</span> : <span>&#9776;</span>}
+          {mobileNavShown ? <AiOutlineClose /> : <AiOutlineMenu />}
         </button>
         <div
           className={`min-lg:hidden fixed ${

@@ -1,17 +1,12 @@
 import Image from "next/image";
-import { ReactNode } from "react";
 
 interface ServiceCardProps {
   header: string;
   iconSrc: string;
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
-const ServiceCard = ({
-  header,
-  children,
-  iconSrc,
-}: ServiceCardProps) => {
+const ServiceCard = ({ header, children, iconSrc }: ServiceCardProps) => {
   return (
     <div className="flex flex-col gap-2 h-full">
       <div className="p-2 text-white rounded-full bg-color-2/40 w-fit">
