@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import "@styles/animatedBgImage.css";
+import "@styles/animations.css";
 
 interface AnimatedBgImageProps {
   images: Array<string>;

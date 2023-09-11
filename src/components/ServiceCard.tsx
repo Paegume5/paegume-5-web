@@ -17,6 +17,7 @@ const ServiceCard = ({ header, children, iconSrc }: ServiceCardProps) => {
           width={24}
           draggable={false}
           className="select-none"
+          onContextMenu={() => false}
         />
       </div>
       <h1 className="text-lg font-medium">{header}</h1>

@@ -1,8 +1,6 @@
 "use client";
 
-import { toggleBodyScroll } from "@utils/utils";
-import { useEffect } from "react";
-import "@styles/notificationModal.css";
+import Modal from "./Modal";
 
 interface NotificationModalProps {
   open: boolean;
@@ -36,22 +34,15 @@ const NotificationModal = ({
   redirect = false,
   redirectTo,
 }: NotificationModalProps) => {
-  useEffect(() => {
-    toggleBodyScroll("hide");
-    return () => toggleBodyScroll("show");
-  });
-
-  const bgColor = color.bg[type ?? "default"];
-  const textColor = color.text[type ?? "default"];
-
   const modal = (
-    <div
-      className="fixed top-0 z-50 flex items-center justify-center w-screen h-screen bg-black/75"
-      onClick={() => setOpen(false)}
+    <Modal
+      open={open}
+      setOpen={setOpen}
+      className="pb-64"
+      dark={type !== "default"}
     >
       <div
-        className={`flex flex-col gap-2 p-4 mb-64 ${bgColor} ${textColor} text-black max-w-sm rounded-md shadow-lg`}
-        style={{ animation: "slideDown 0.2s" }}
+        className={`flex flex-col gap-2 p-4 ${color.bg[type]} ${color.text[type]} text-black max-w-sm rounded-md shadow-lg`}
       >
         <div>
           <div className="text-3xl font-medium">{title}</div>
@@ -59,7 +50,7 @@ const NotificationModal = ({
         </div>
         <div className="font-light">{children}</div>
       </div>
-    </div>
+    </Modal>
   );
 
   return open && modal;

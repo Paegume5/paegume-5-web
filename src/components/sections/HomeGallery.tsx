@@ -1,9 +1,11 @@
 import { homeGalleryImages } from "@constants/constants";
 import Image from "next/image";
-import "@styles/homeGallery.css";
 import { useState } from "react";
 import { toggleBodyScroll } from "@utils/utils";
 import { AiOutlineClose } from "react-icons/ai";
+
+import "@styles/homeGallery.css";
+import "@styles/animations.css";
 
 const HomeGallery = () => {
   const [isImageFull, setIsImageFull] = useState(false);
@@ -12,7 +14,7 @@ const HomeGallery = () => {
   const FullScreenImage = (
     <>
       <button
-        className="hidden sm:block fixed z-30 border-[3px] text-2xl text-white rounded-full p-1 top-4 right-4"
+        className="fixed z-30 bg-gray-300/50 text-2xl text-black/90 rounded-full p-1 top-2 right-2"
         onClick={() => {
           setIsImageFull(false);
           toggleBodyScroll("show");
@@ -27,8 +29,11 @@ const HomeGallery = () => {
           toggleBodyScroll("show");
         }}
       ></div>
-      <div className="fixed top-[50%] left-[50%] z-30 transform translate-x-[-50%] translate-y-[-50%]">
-        <div className="relative bg-blue-500 w-[70vw] sm:w-screen aspect-video p-8">
+      <div className="fixed top-[50%] left-[50%] z-30 transform translate-x-[-50%] translate-y-[-50%] rounded-md overflow-hidden">
+        <div
+          className="relative bg-blue-500 w-[70vw] sm:w-[95vw] aspect-video p-8"
+          style={{ animation: "modalOpen 0.5s" }}
+        >
           <Image src={currentFullImage} alt="Gallery Image" fill />
         </div>
       </div>

@@ -15,7 +15,6 @@ const logo_font = Montserrat({
 });
 
 const NavBar = () => {
-  const icon = <AiOutlineClose />
   const pathName = usePathname();
 
   const afterStyles =
@@ -96,7 +95,7 @@ const NavBar = () => {
         <div
           className={`min-lg:hidden fixed ${
             mobileNavShown ? mobileNavShownStyles : mobileNavHiddenStyles
-          } flex flex-col items-end mt-[22px] right-0 h-full
+          } flex flex-col items-end mt-[26px] right-0 h-full
           bg-[#113436] w-56 transition-all duration-200 ease-in`}
         >
           {links.map((link) => {
