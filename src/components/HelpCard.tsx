@@ -20,7 +20,7 @@ const Help = ({ header, children, iconSrc }: HelpProps) => {
             className="select-none"
           />
         </div>
-        <h1 className="text-lg font-medium">{header}</h1>
+        <h1 className="text-lg text-center xs:text-sm font-medium xs:font-semibold">{header}</h1>
       </div>
       <p className="text-sm text-gray-600 sm:text-xs">{children}</p>
     </div>

@@ -32,7 +32,7 @@ const Footer = () => {
       <div className="flex flex-col items-center justify-center w-full gap-2 lg:max-w-lg">
         <div className="flex items-center justify-center gap-4">
           <Image src="/img/logo.png" alt="" width={80} height={80} />
-          <p className="text-footer">
+          <p className="text-footer sm:text-footer-sm">
             Paegume 5 Charity Organization (PAGD) represents a relatively young
             and local NGO that promotes humanitarian service delivery, saving
             lives and mitigating human suffering based on comprehensive
@@ -64,7 +64,7 @@ const Footer = () => {
         <h1 className="mb-2 text-2xl font-medium text-white">
           Send us a message
         </h1>
-        <div className="flex flex-col w-full gap-2 px-8 lg:px-12 sm:px-12">
+        <div className="flex flex-col w-full gap-2 px-8 lg:px-16 sm:px-6">
           <input
             type="text"
             name="Name"

@@ -14,7 +14,7 @@ const SocialIcon = ({
       href={link}
       target="_blank"
       onContextMenu={() => {}}
-      className={`${bgColor} p-2 rounded-full hover:transform hover:-translate-y-1 transition-all duration-300`}
+      className={`${bgColor} p-2 rounded-full hover:transform hover:-translate-y-[6px] transition-all duration-300`}
     >
       {children}
     </a>

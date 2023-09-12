@@ -20,9 +20,9 @@ const Modal = ({
   noAnimation,
   children,
 }: ModalProps) => {
-  useEffect(() => {
-    open ? toggleBodyScroll("hide") : toggleBodyScroll("show");
-  }, [open]);
+  // useEffect(() => {
+  //   open ? toggleBodyScroll("hide") : toggleBodyScroll("show");
+  // }, [open]);
 
   const modal = (
     <div
@@ -41,7 +41,7 @@ const Modal = ({
         <button
           className={`absolute top-2 right-2 text-lg font-bold bg-gray-300/40 shadow-2xl rounded-full p-1 z-50 ${
             dark && "text-white"
-          }`}
+          } hover:bg-gray-300/80`}
           onClick={() => setOpen(false)}
         >
           <AiOutlineClose />

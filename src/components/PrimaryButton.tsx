@@ -35,7 +35,7 @@ const PrimaryButton = ({
 
   const linkBtn = (
     <a
-      className={`flex gap-1 items-center justify-center px-5 py-3 w-fit rounded-full outline-none ${bgColor} text-secondary-fg hover:opacity-75 ${classes}`}
+      className={`flex gap-1 items-center justify-center px-5 py-3 rounded-full outline-none ${bgColor} text-secondary-fg hover:opacity-75 ${classes}`}
       href={to}
     >
       {text}

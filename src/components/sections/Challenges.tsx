@@ -3,8 +3,8 @@ import ChallengesCard from "@components/ChallengesCard";
 const Challenges = () => {
   return (
     <div className="flex flex-col items-center h-full gap-6 px-4 my-12 sm:px-1">
-      <div className="text-4xl text-center">Challenges and Gaps</div>
-      <div className="grid w-full h-full grid-cols-4 gap-4 px-4 sm:gap-2 sm:px-2 text-gray-50 xl:grid-cols-2">
+      <div className="text-4xl text-center xs:text-3xl">Challenges and Gaps</div>
+      <div className="grid w-full h-full grid-cols-4 gap-4 px-4 sm:gap-2 sm:px-2 xs:grid-cols-1 xs:px-8 text-gray-50 xl:grid-cols-2">
         <ChallengesCard
           header="Capacity Constraints"
           imgSrc="/svg/icons/capacity.svg"

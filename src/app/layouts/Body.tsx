@@ -1,5 +1,3 @@
-"use client";
-
 import Test from "@components/Test";
 import Challenges from "@components/sections/Challenges";
 import HomeGallery from "@components/sections/HomeGallery";

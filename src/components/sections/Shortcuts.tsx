@@ -1,3 +1,5 @@
+"use client";
+
 import ShortcutBtn from "@components/ShortcutBtn";
 
 const Shortcuts = ({ noLinks }: { noLinks?: boolean }) => {

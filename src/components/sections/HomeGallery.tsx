@@ -1,3 +1,5 @@
+"use client";
+
 import { homeGalleryImages } from "@constants/constants";
 import Image from "next/image";
 import { useState } from "react";
@@ -14,7 +16,7 @@ const HomeGallery = () => {
   const FullScreenImage = (
     <>
       <button
-        className="fixed z-30 bg-gray-300/50 text-2xl text-black/90 rounded-full p-1 top-2 right-2"
+        className="fixed z-30 bg-gray-300/60 text-2xl text-black/90 rounded-full p-1 top-2 right-2 hover:bg-gray-300/50"
         onClick={() => {
           setIsImageFull(false);
           toggleBodyScroll("show");
@@ -32,7 +34,7 @@ const HomeGallery = () => {
       <div className="fixed top-[50%] left-[50%] z-30 transform translate-x-[-50%] translate-y-[-50%] rounded-md overflow-hidden">
         <div
           className="relative bg-blue-500 w-[70vw] sm:w-[95vw] aspect-video p-8"
-          style={{ animation: "modalOpen 0.5s" }}
+          style={{ animation: "imageOpen 0.2s" }}
         >
           <Image src={currentFullImage} alt="Gallery Image" fill />
         </div>

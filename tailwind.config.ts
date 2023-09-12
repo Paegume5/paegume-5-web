@@ -43,6 +43,7 @@ const config: Config = {
         // heading: '54px',
         "heading-md": ["38px", { lineHeight: "42px" }],
         footer: ["12px", { lineHeight: "24px" }],
+        "footer-sm": ["10px", { lineHeight: "16px" }],
       },
       boxShadow: {
         card: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
@@ -54,6 +55,7 @@ const config: Config = {
       lg: { max: "1023px" },
       md: { max: "767px" },
       sm: { max: "639px" },
+      xs: { max: "467px" },
 
       "min-2xl": { min: "1535px" },
       "min-xl": { min: "1279px" },

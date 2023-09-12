@@ -31,7 +31,7 @@ const ChallengesCard = ({
           {header}
         </h1>
       </div>
-      <p className="px-6 text-md font-light text-center md:text-xs">
+      <p className="px-6 text-md font-light text-center md:text-xs xs:px-12">
         {children}
       </p>
     </div>

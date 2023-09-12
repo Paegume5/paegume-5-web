@@ -41,7 +41,7 @@ const SecondaryButton = ({
 
   const linkBtn = (
     <a
-      className={`flex gap-1 items-center justify-center py-3 text-sm w-fit rounded-[4px] ${bgColor} text-secondary-fg hover:opacity-75 ${classes}`}
+      className={`flex gap-1 items-center justify-center py-3 text-sm rounded-[4px] ${bgColor} text-secondary-fg hover:opacity-75 disabled:opacity-75 ${classes}`}
       href={to ?? ""}
     >
       {text}

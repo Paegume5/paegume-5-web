@@ -6,7 +6,7 @@ const JoinUs = () => {
     <div className="flex items-center justify-between px-8 mx-auto lg:flex-col md:px-4">
       <div className="flex flex-col justify-center gap-8 px-12 my-8 lg:px-6">
         <h1 className="text-4xl font-semibold">Join Us In Our Mission!</h1>
-        <p className="text-lg text-gray-600">
+        <p className="text-lg sm:text-base text-gray-600">
           We are one of the very few organizations striving to address the needs
           of the most vulnerable urban poor and homeless groups in an integrated
           approach, providing critically needed humanitarian support.

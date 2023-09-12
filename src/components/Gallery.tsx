@@ -12,7 +12,7 @@ const Gallery = () => {
 
   return (
     <div className="w-full">
-      <div className="grid flex-wrap h-full grid-cols-3 gap-4 px-32 py-12 lg:px-16 md:px-8 md:grid-cols-2">
+      <div className="grid h-full grid-cols-3 gap-4 px-32 py-12 lg:px-16 md:px-8 md:grid-cols-2">
         {galleryImages.map((image, index) => {
           return (
             <div

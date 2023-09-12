@@ -47,6 +47,13 @@ export const galleryImages = [
   "/img/gallery/g5.jpg",
   "/img/gallery/g6.jpg",
   "/img/gallery/g7.jpg",
+  // "/img/gallery/g8.jpg",
+  // "/img/gallery/g9.jpg",
+  // "/img/gallery/g10.jpg",
+  // "/img/gallery/g11.jpg",
+  // "/img/gallery/g12.jpg",
+  // "/img/gallery/g13.jpg",
+  // "/img/gallery/g14.jpg",
 ];
 
 export const lightboxSlides = galleryImages.map((item) => ({

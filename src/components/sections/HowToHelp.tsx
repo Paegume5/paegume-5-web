@@ -8,7 +8,7 @@ const HowToHelp = () => {
       className="flex items-center justify-center px-8 md:px-2 mx-auto lg:flex-col"
     >
       <div className="flex flex-col gap-12 justify-center w-full h-full p-12 md:p-6">
-        <h1 className="text-4xl font-bold sm:self-center">How You Can Help</h1>
+        <h1 className="text-4xl font-bold sm:text-center">How You Can Help</h1>
         <div className="grid grid-cols-2 gap-4">
           <HelpCard header="Donate" iconSrc="/svg/icons/money.svg">
             We kindly request your support through donations. Whether it is

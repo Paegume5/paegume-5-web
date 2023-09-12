@@ -62,7 +62,7 @@ const Goals = () => {
         </div>
         <div className="w-full">
           <center>
-            <PrimaryButton text="Read more" arrow link to="/goals" />
+            <PrimaryButton text="Read more" arrow link to="/goals" classes="w-fit" />
           </center>
         </div>
       </>
